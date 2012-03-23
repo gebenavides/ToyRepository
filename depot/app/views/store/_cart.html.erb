@@ -9,6 +9,6 @@
 
 </table>
 
-<%= button_to "Checkout" , :action => 'checkout' %>
+<%= button_to "Checkout" , :action => :checkout if not @checkout -%>
 <%= button_to "Empty cart" , :action => :empty_cart %>
 

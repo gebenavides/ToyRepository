@@ -5880,3 +5880,306 @@ Rendering store/checkout
 Rendered store/_cart_item (0.4ms)
 Rendered store/_cart (1.9ms)
 Completed in 87ms (View: 25, DB: 0) | 200 OK [http://localhost/store/save_order]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2012-03-23 12:58:37) [GET]
+  [4;36;1mProduct Load (0.8ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (2.1ms)
+Completed in 42ms (View: 25, DB: 1) | 200 OK [http://localhost/store/]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2012-03-23 13:05:10) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc=", "id"=>"7", "_"=>"", "commit"=>"Add to Cart"}
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 7) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (6.7ms)
+Rendered store/_cart (10.7ms)
+Completed in 25ms (View: 15, DB: 0) | 200 OK [http://localhost/store/add_to_cart/7]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:05:11) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.8ms)
+Rendered store/_cart (5.4ms)
+Completed in 79ms (View: 14, DB: 1) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#save_order (for 127.0.0.1 at 2012-03-23 13:05:14) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc=", "order"=>{"address"=>"", "name"=>"", "pay_type"=>"", "email"=>""}, "commit"=>"Place Order"}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (0.4ms)
+Rendered store/_cart (1.8ms)
+Completed in 75ms (View: 24, DB: 0) | 200 OK [http://localhost/store/save_order]
+
+
+Processing StoreController#save_order (for 127.0.0.1 at 2012-03-23 13:11:21) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc=", "order"=>{"address"=>"Bluemill drives 99999", "name"=>"Jon", "pay_type"=>"check", "email"=>"itsanemail@domain.com"}, "commit"=>"Place Order"}
+  [4;36;1mOrder Create (0.3ms)[0m   [0;1mINSERT INTO "orders" ("address", "name", "pay_type", "created_at", "updated_at", "email") VALUES('Bluemill drives 99999', 'Jon', 'check', '2012-03-23 18:11:21', '2012-03-23 18:11:21', 'itsanemail@domain.com')[0m
+  [4;35;1mLineItem Create (0.2ms)[0m   [0mINSERT INTO "line_items" ("total_price", "created_at", "updated_at", "product_id", "order_id", "quantity") VALUES(0.01, '2012-03-23 18:11:21', '2012-03-23 18:11:21', 7, 1, 1)[0m
+Redirected to http://localhost:3000/store
+Completed in 196ms (DB: 1) | 302 Found [http://localhost/store/save_order]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2012-03-23 13:11:22) [GET]
+  [4;36;1mProduct Load (0.7ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (1.3ms)
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2012-03-23 13:25:23) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc=", "id"=>"7", "_"=>"", "commit"=>"Add to Cart"}
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 7) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (2.7ms)
+Rendered store/_cart (4.2ms)
+Completed in 18ms (View: 9, DB: 0) | 200 OK [http://localhost/store/add_to_cart/7]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:28:54) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.2ms)
+Rendered store/_cart (4.6ms)
+Completed in 21ms (View: 10, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:28:55) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.2ms)
+Rendered store/_cart (4.7ms)
+Completed in 22ms (View: 10, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:28:58) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.3ms)
+Rendered store/_cart (4.7ms)
+Completed in 22ms (View: 11, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:35:07) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.4ms)
+Rendered store/_cart (59.2ms)
+Completed in 79ms (View: 67, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:35:10) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.5ms)
+Rendered store/_cart (4.9ms)
+Completed in 23ms (View: 11, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:35:11) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.4ms)
+Rendered store/_cart (4.8ms)
+Completed in 21ms (View: 10, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:35:12) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.5ms)
+Rendered store/_cart (5.0ms)
+Completed in 23ms (View: 11, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:35:12) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.3ms)
+Rendered store/_cart (4.8ms)
+Completed in 23ms (View: 10, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:35:12) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.1ms)
+Rendered store/_cart (4.6ms)
+Completed in 21ms (View: 10, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:35:12) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (4.7ms)
+Rendered store/_cart (6.4ms)
+Completed in 26ms (View: 14, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:35:12) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (4.7ms)
+Rendered store/_cart (6.4ms)
+Completed in 26ms (View: 13, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:35:12) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (5.0ms)
+Rendered store/_cart (6.7ms)
+Completed in 25ms (View: 14, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:35:13) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (5.1ms)
+Rendered store/_cart (6.8ms)
+Completed in 87ms (View: 14, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:35:16) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.4ms)
+Rendered store/_cart (5.5ms)
+Completed in 24ms (View: 13, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:35:17) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.2ms)
+Rendered store/_cart (4.5ms)
+Completed in 21ms (View: 10, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:35:18) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.6ms)
+Rendered store/_cart (5.2ms)
+Completed in 23ms (View: 11, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:35:19) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.2ms)
+Rendered store/_cart (5.3ms)
+Completed in 22ms (View: 11, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:36:03) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.5ms)
+Rendered store/_cart (5.7ms)
+Completed in 27ms (View: 14, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:36:08) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.6ms)
+Rendered store/_cart (5.1ms)
+Completed in 22ms (View: 11, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:36:12) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.4ms)
+Rendered store/_cart (4.8ms)
+Completed in 22ms (View: 10, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:36:12) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.7ms)
+Rendered store/_cart (5.3ms)
+Completed in 82ms (View: 11, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:36:12) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.5ms)
+Rendered store/_cart (5.0ms)
+Completed in 28ms (View: 11, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:36:13) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.4ms)
+Rendered store/_cart (4.8ms)
+Completed in 24ms (View: 11, DB: 1) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:36:38) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.8ms)
+Rendered store/_cart (6.2ms)
+Completed in 80ms (View: 15, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:36:41) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.2ms)
+Rendered store/_cart (4.7ms)
+Completed in 21ms (View: 10, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2012-03-23 13:36:44) [POST]
+  Parameters: {"authenticity_token"=>"LYi7v09HFLUCzlCsoQLjpU4F4g1Zv2qFXlrMzZHg+Rc="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (3.6ms)
+Rendered store/_cart (5.1ms)
+Completed in 22ms (View: 11, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2012-03-23 13:41:24) [GET]
+  [4;36;1mProduct Load (0.8ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (1.1ms)
+Rendered store/_cart (9.1ms)
+Completed in 48ms (View: 33, DB: 1) | 200 OK [http://localhost/store/]
