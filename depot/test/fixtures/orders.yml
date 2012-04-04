@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  adress: MyText
-   email: MyString
+  address: MyText
+  email: MyString
   pay_type: MyString
 
 two:
   name: MyString
-  adress: MyText
-   email: MyString
+  address: MyText
+  email: MyString
   pay_type: MyString

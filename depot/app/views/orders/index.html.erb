@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Adress</th>
+    <th>Address</th>
     <th> email</th>
     <th>Pay type</th>
   </tr>
@@ -11,8 +11,8 @@
 <% @orders.each do |order| %>
   <tr>
     <td><%=h order.name %></td>
-    <td><%=h order.adress %></td>
-    <td><%=h order. email %></td>
+    <td><%=h order.address %></td>
+    <td><%=h order.email %></td>
     <td><%=h order.pay_type %></td>
     <td><%= link_to 'Show', order %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>

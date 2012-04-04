@@ -8,8 +8,8 @@
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label :descritpion %><br />
-    <%= f.text_area :descritpion %>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
   </p>
   <p>
     <%= f.label :image_url %><br />

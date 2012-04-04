@@ -2,10 +2,10 @@
 
 one:
   title: MyString
-  descritpion: MyText
+  description: MyText
   image_url: MyString
 
 two:
   title: MyString
-  descritpion: MyText
+  description: MyText
   image_url: MyString
